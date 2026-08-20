@@ -95,6 +95,19 @@
         .scale-svg-shadow {
             filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.6));
         }
+        .bolt-anim {
+            animation: boltPulse 1.2s ease-in-out infinite;
+        }
+        @keyframes boltPulse {
+            0%, 100% {
+                opacity: 1;
+                text-shadow: 0 0 0 rgba(251, 191, 36, 0);
+            }
+            50% {
+                opacity: 0.45;
+                text-shadow: 0 0 14px rgba(251, 191, 36, 0.95);
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-rose-500 selection:text-white">
@@ -181,11 +194,11 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
                 
                 <!-- STRESS / TRAUMATA BLOCK (LINKS - nur sichtbar bei Stress-Button) -->
-                <div id="stress-card-container" class="lg:col-span-5 card-item searchable-node transition-all duration-500 hidden" data-keywords="stress traumata verlust krankheit job krisen partnerschaft überlastung" data-category="stress">
+                <div id="stress-card-container" class="lg:col-span-5 card-item searchable-node transition-all duration-500 hidden" data-keywords="stress traumata verlust krankheit job krisen partnerschaft überlastung negative nachrichten" data-category="stress">
                     <div id="stress-card" class="glass-stress rounded-2xl p-5 relative overflow-hidden transition-all duration-500">
                         <div class="flex items-center justify-between border-b border-amber-500/30 pb-3 mb-3">
                             <div class="flex items-center gap-2.5">
-                                <div class="p-2.5 bg-amber-500/20 rounded-xl text-amber-400 font-bold text-xl border border-amber-500/30">⚡</div>
+                                <div class="p-2.5 bg-amber-500/20 rounded-xl text-amber-400 font-bold text-xl border border-amber-500/30 bolt-anim">⚡</div>
                                 <div>
                                     <h3 class="text-base md:text-lg font-black text-amber-300 tracking-wide">STRESS / TRAUMATA</h3>
                                     <p id="stress-card-sub" class="text-[11px] font-bold text-amber-400/80 uppercase tracking-wider">Übergeordnete Systemlast</p>
@@ -215,6 +228,9 @@
                             </div>
                             <div class="bg-slate-900/80 p-2.5 rounded-xl border border-amber-500/20 text-slate-200 flex items-center gap-2 font-medium col-span-2">
                                 <span class="text-amber-400">💍</span> Beziehungskonflikte
+                            </div>
+                            <div class="bg-slate-900/80 p-2.5 rounded-xl border border-amber-500/20 text-slate-200 flex items-center gap-2 font-medium col-span-2">
+                                <span class="text-amber-400">📰</span> Negative Nachrichten
                             </div>
                         </div>
 
