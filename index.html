@@ -108,19 +108,6 @@
                 text-shadow: 0 0 14px rgba(251, 191, 36, 0.95);
             }
         }
-        /* Matrix-View Listen: Titel (strong) und Text bündig ausrichten */
-        #matrix-view ul.list-disc li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-        }
-        #matrix-view ul.list-disc li strong {
-            flex: 0 0 auto;
-            white-space: nowrap;
-        }
-        #matrix-view ul.list-disc li::marker {
-            font-size: 0.75em;
-        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-rose-500 selection:text-white">
@@ -790,7 +777,7 @@
 
                 <div class="glass-symptom p-5 rounded-2xl space-y-3">
                     <h3 class="text-base font-black text-rose-400">🚨 SÄMTLICHE SYMPTOME & HERAUSFORDERUNGEN</h3>
-                    <ul class="space-y-2 text-xs text-slate-300 list-disc list-inside">
+                    <ul class="space-y-2 text-xs text-slate-300 list-disc list-outside pl-5">
                         <li><strong>Zeitblindheit / Time Blindness:</strong> Störung der zeitlichen Wahrnehmung.</li>
                         <li><strong>Zeitblindheit in stimulierenden Umgebungen:</strong> Zeitverlust bei hoher Stimulation.</li>
                         <li><strong>Dysfunktionaler Perfektionismus:</strong> Unfähigkeit abzuschließen aus Angst.</li>
@@ -817,7 +804,7 @@
             <div class="space-y-4">
                 <div class="glass-solution p-5 rounded-2xl space-y-3">
                     <h3 class="text-base font-black text-emerald-400">💡 SÄMTLICHE STRATEGIEN & LÖSUNGEN</h3>
-                    <ul class="space-y-2 text-xs text-slate-300 list-disc list-inside">
+                    <ul class="space-y-2 text-xs text-slate-300 list-disc list-outside pl-5">
                         <li><strong>Aerob-anaerobe Bewegung:</strong> Dopaminhaushalt regulieren.</li>
                         <li><strong>Reizreiche Bewegung:</strong> Belohnungssystem nachhaltiger aktivieren.</li>
                         <li><strong>Sensorische Grundstimulation:</strong> Wechsel zwischen Unter- und Überstimulation.</li>
