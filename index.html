@@ -108,6 +108,19 @@
                 text-shadow: 0 0 14px rgba(251, 191, 36, 0.95);
             }
         }
+        /* Matrix-View Listen: Titel (strong) und Text bündig ausrichten */
+        #matrix-view ul.list-disc li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        #matrix-view ul.list-disc li strong {
+            flex: 0 0 auto;
+            white-space: nowrap;
+        }
+        #matrix-view ul.list-disc li::marker {
+            font-size: 0.75em;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-rose-500 selection:text-white">
