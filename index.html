@@ -523,10 +523,10 @@
             <!-- Quick Filter Tags -->
             <div class="flex items-center gap-1.5 overflow-x-auto w-full pb-1 md:pb-0 text-[11px] custom-scrollbar">
                 <span class="text-slate-400 font-bold uppercase tracking-wider text-[10px] mr-1 shrink-0">Filter:</span>
-                <button onclick="setFilter('all')" class="filter-btn active px-2.5 py-1 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-medium shrink-0 hover:border-slate-500">Alle</button>
-                <button onclick="setFilter('stress')" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-amber-300 border border-amber-500/30 font-medium shrink-0 hover:border-amber-400">⚡ Stress & Traumata</button>
-                <button onclick="setFilter('symptom')" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-rose-300 border border-rose-500/30 font-medium shrink-0 hover:border-rose-400">🚨 Herausforderungen</button>
-                <button onclick="setFilter('solution')" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-emerald-300 border border-emerald-500/30 font-medium shrink-0 hover:border-emerald-400">💡 Strategien & Lösungen</button>
+                <button onclick="setFilter('all', event)" class="filter-btn active px-2.5 py-1 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-medium shrink-0 hover:border-slate-500">Alle</button>
+                <button onclick="setFilter('stress', event)" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-amber-300 border border-amber-500/30 font-medium shrink-0 hover:border-amber-400">⚡ Stress & Traumata</button>
+                <button onclick="setFilter('symptom', event)" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-rose-300 border border-rose-500/30 font-medium shrink-0 hover:border-rose-400">🚨 Herausforderungen</button>
+                <button onclick="setFilter('solution', event)" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-emerald-300 border border-emerald-500/30 font-medium shrink-0 hover:border-emerald-400">💡 Strategien & Lösungen</button>
             </div>
         </div>
     </section>
@@ -1246,13 +1246,15 @@
 
         let currentFilter = 'all';
 
-        function setFilter(type) {
+        function setFilter(type, event) {
             currentFilter = type;
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('bg-slate-800', 'text-slate-200');
                 btn.classList.add('bg-slate-900');
             });
-            event.target.classList.add('bg-slate-800', 'text-slate-200');
+            if (event && event.target) {
+                event.target.classList.add('bg-slate-800', 'text-slate-200');
+            }
             filterContent();
         }
 
