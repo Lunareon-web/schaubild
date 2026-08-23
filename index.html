@@ -289,7 +289,7 @@
             background: var(--surface-glass);
             border: 1px solid var(--border-primary);
             border-radius: 9999px;
-            cursor: pointer;
+            pointer-events: none;
             transition: all 200ms ease;
         }
         .theme-toggle:hover {
@@ -309,6 +309,7 @@
             background: transparent;
             border: none;
             cursor: pointer;
+            pointer-events: auto;
             transition: all 200ms ease;
         }
         .theme-toggle-btn:hover {
@@ -1523,10 +1524,18 @@
             
             // Event listeners
             if (themeDarkBtn) {
-                themeDarkBtn.addEventListener('click', () => setTheme('dark'));
+                themeDarkBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setTheme('dark');
+                });
             }
             if (themeLightBtn) {
-                themeLightBtn.addEventListener('click', () => setTheme('light'));
+                themeLightBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setTheme('light');
+                });
             }
             
             // Listen for system preference changes (only if user hasn't set a preference)
@@ -1537,14 +1546,17 @@
                     updateThemeButtons(newTheme);
                 }
             });
+        } catch (e) {
+            console.error('Theme init error:', e);
         }
-        
-        // Initialize theme when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initTheme);
-        } else {
-            initTheme();
-        }
+    }
+    
+    // Initialize theme when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTheme);
+    } else {
+        initTheme();
+    }
     </script>
 </body>
 </html>
