@@ -1472,8 +1472,11 @@
                     stressCardDesc.innerHTML = "Exogene Primärfaktoren, die sich <strong>übergeordnet auf dem linken Waagbalken</strong> anhäufen und das gesamte System nach unten drücken:";
                 }
             }
-// ==========================================================================
-// THEME SYSTEM - Light/Dark Mode Toggle
+        }
+        }
+
+        // ==========================================================================
+        // THEME SYSTEM - Light/Dark Mode Toggle
         // ==========================================================================
         function initTheme() {
             const html = document.documentElement;
@@ -1559,4 +1562,3 @@
     </script>
 </body>
 </html>
-<!-- Schaubild restored 08/24/2026 00:45:44 -->
