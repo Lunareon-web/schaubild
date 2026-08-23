@@ -43,69 +43,419 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        /* ==========================================================================
+           THEME SYSTEM - CSS Custom Properties
+           ========================================================================== */
+        :root {
+            /* Dark Mode (Default/Referenz) */
+            --bg-primary: #080c14;
+            --bg-secondary: #0f172a;
+            --bg-tertiary: #1e293b;
+            --surface: rgba(15, 23, 42, 0.75);
+            --surface-elevated: rgba(15, 23, 42, 0.9);
+            --surface-glass: rgba(15, 23, 42, 0.75);
+            
+            --border-primary: rgba(255, 255, 255, 0.08);
+            --border-secondary: rgba(255, 255, 255, 0.12);
+            --border-accent: rgba(244, 63, 94, 0.22);
+            --border-accent-hover: rgba(244, 63, 94, 0.45);
+            
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-tertiary: #94a3b8;
+            --text-muted: #64748b;
+            --text-on-accent: #ffffff;
+            
+            --accent-negative: #f43f5e;
+            --accent-negative-hover: #fb7185;
+            --accent-negative-bg: rgba(244, 63, 94, 0.07);
+            --accent-negative-border: rgba(244, 63, 94, 0.22);
+            --accent-negative-border-hover: rgba(244, 63, 94, 0.45);
+            --accent-negative-glow: rgba(244, 63, 94, 0.15);
+            --accent-negative-text: #fda4af;
+            --accent-negative-text-strong: #f43f5e;
+            
+            --accent-positive: #10b981;
+            --accent-positive-hover: #34d399;
+            --accent-positive-bg: rgba(16, 185, 129, 0.07);
+            --accent-positive-border: rgba(16, 185, 129, 0.22);
+            --accent-positive-border-hover: rgba(16, 185, 129, 0.45);
+            --accent-positive-glow: rgba(16, 185, 129, 0.15);
+            --accent-positive-text: #6ee7b7;
+            --accent-positive-text-strong: #10b981;
+            
+            --accent-warning: #f97316;
+            --accent-warning-bg: rgba(249, 115, 22, 0.12);
+            --accent-warning-border: rgba(249, 115, 22, 0.35);
+            --accent-warning-glow: rgba(249, 115, 22, 0.15);
+            --accent-warning-text: #fed7aa;
+            
+            --accent-neutral: #64748b;
+            --accent-neutral-bg: rgba(100, 116, 139, 0.1);
+            
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.3);
+            --shadow-glass: 0 4px 20px rgba(0, 0, 0, 0.3);
+            
+            --bg-gradient-start: #080c14;
+            --bg-gradient-end: #0f172a;
+            
+            --scale-svg-shadow: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.6));
+            --bolt-glow: rgba(251, 191, 36, 0.95);
+            
+            --input-bg: rgba(15, 23, 42, 0.9);
+            --input-border: rgba(255, 255, 255, 0.12);
+            --input-focus-border: #f43f5e;
+            
+            --header-bg: rgba(15, 23, 42, 0.9);
+            --header-border: rgba(148, 163, 184, 0.15);
+            
+            --filter-bg: rgba(15, 23, 42, 0.9);
+            --filter-border: rgba(255, 255, 255, 0.12);
+            
+            --glass-panel-bg: rgba(15, 23, 42, 0.75);
+            --glass-panel-border: rgba(255, 255, 255, 0.08);
+            
+            --scrollbar-track: rgba(15, 23, 42, 0.6);
+            --scrollbar-thumb: rgba(100, 116, 139, 0.4);
+            --scrollbar-thumb-hover: rgba(148, 163, 184, 0.6);
+            
+            --bolt-glow-color: rgba(251, 191, 36, 0.95);
+        }
+        
+        [data-theme="light"] {
+            /* Light Mode - Eigenständiges, professionelles Theme */
+            --bg-primary: #F4F6F8;
+            --bg-secondary: #FFFFFF;
+            --bg-tertiary: #F8FAFC;
+            --surface: #FFFFFF;
+            --surface-elevated: #FFFFFF;
+            --surface-glass: rgba(255, 255, 255, 0.95);
+            
+            --border-primary: #D9E0E7;
+            --border-secondary: #E2E8F0;
+            --border-accent: rgba(229, 58, 91, 0.25);
+            --border-accent-hover: rgba(229, 58, 91, 0.5);
+            
+            --text-primary: #172033;
+            --text-secondary: #5B687A;
+            --text-tertiary: #7C8796;
+            --text-muted: #94A3B8;
+            --text-on-accent: #ffffff;
+            
+            --accent-negative: #D9365B;
+            --accent-negative-hover: #E84C6D;
+            --accent-negative-bg: rgba(217, 54, 91, 0.08);
+            --accent-negative-border: rgba(217, 54, 91, 0.25);
+            --accent-negative-border-hover: rgba(217, 54, 91, 0.5);
+            --accent-negative-glow: rgba(217, 54, 91, 0.12);
+            --accent-negative-text: #E84C6D;
+            --accent-negative-text-strong: #C42B4A;
+            
+            --accent-positive: #008F72;
+            --accent-positive-hover: #00A688;
+            --accent-positive-bg: rgba(0, 143, 114, 0.08);
+            --accent-positive-border: rgba(0, 143, 114, 0.25);
+            --accent-positive-border-hover: rgba(0, 143, 114, 0.5);
+            --accent-positive-glow: rgba(0, 143, 114, 0.12);
+            --accent-positive-text: #008F72;
+            --accent-positive-text-strong: #007A60;
+            
+            --accent-warning: #E07A1A;
+            --accent-warning-bg: rgba(224, 122, 26, 0.1);
+            --accent-warning-border: rgba(224, 122, 26, 0.3);
+            --accent-warning-glow: rgba(224, 122, 26, 0.12);
+            --accent-warning-text: #E07A1A;
+            
+            --accent-neutral: #7C8796;
+            --accent-neutral-bg: rgba(124, 135, 150, 0.1);
+            
+            --shadow-sm: 0 1px 2px rgba(23, 32, 51, 0.06);
+            --shadow-md: 0 4px 16px rgba(23, 32, 51, 0.08);
+            --shadow-lg: 0 8px 24px rgba(23, 32, 51, 0.1);
+            --shadow-glass: 0 2px 8px rgba(23, 32, 51, 0.06);
+            
+            --bg-gradient-start: #F4F6F8;
+            --bg-gradient-end: #EDF1F5;
+            
+            --scale-svg-shadow: drop-shadow(0px 4px 12px rgba(23, 32, 51, 0.12));
+            --bolt-glow: rgba(217, 54, 91, 0.9);
+            
+            --input-bg: #FFFFFF;
+            --input-border: #D9E0E7;
+            --input-focus-border: #D9365B;
+            
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --header-border: #E2E8F0;
+            
+            --filter-bg: #FFFFFF;
+            --filter-border: #E2E8F0;
+            
+            --glass-panel-bg: rgba(255, 255, 255, 0.95);
+            --glass-panel-border: #E2E8F0;
+            
+            --scrollbar-track: #F1F5F9;
+            --scrollbar-thumb: #CBD5E1;
+            --scrollbar-thumb-hover: #94A3B8;
+            
+            --bolt-glow-color: rgba(217, 54, 91, 0.9);
+        }
+        
+        /* Base styles using CSS variables */
+        * {
+            transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, box-shadow 200ms ease, fill 200ms ease, stroke 200ms ease;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
-            background: #080c14;
-            color: #f1f5f9;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             overflow-x: hidden;
         }
+        
         .glass-panel {
-            background: rgba(15, 23, 42, 0.75);
+            background: var(--glass-panel-bg);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--glass-panel-border);
         }
+        
         .glass-symptom {
-            background: linear-gradient(135deg, rgba(244, 63, 94, 0.07) 0%, rgba(15, 23, 42, 0.6) 100%);
-            border: 1px solid rgba(244, 63, 94, 0.22);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background: var(--accent-negative-bg);
+            border: 1px solid var(--accent-negative-border);
+            box-shadow: var(--shadow-glass);
         }
         .glass-symptom:hover {
-            border-color: rgba(244, 63, 94, 0.45);
-            box-shadow: 0 6px 24px rgba(244, 63, 94, 0.15);
+            border-color: var(--accent-negative-border-hover);
+            box-shadow: 0 6px 24px var(--accent-negative-glow);
         }
+        
         .glass-solution {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.07) 0%, rgba(15, 23, 42, 0.6) 100%);
-            border: 1px solid rgba(16, 185, 129, 0.22);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background: var(--accent-positive-bg);
+            border: 1px solid var(--accent-positive-border);
+            box-shadow: var(--shadow-glass);
         }
         .glass-solution:hover {
-            border-color: rgba(16, 185, 129, 0.45);
-            box-shadow: 0 6px 24px rgba(16, 185, 129, 0.15);
+            border-color: var(--accent-positive-border-hover);
+            box-shadow: 0 6px 24px var(--accent-positive-glow);
         }
+        
         .glass-stress {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%);
-            border: 1px solid rgba(249, 115, 22, 0.35);
-            box-shadow: 0 8px 30px rgba(249, 115, 22, 0.15);
+            background: var(--accent-warning-bg);
+            border: 1px solid var(--accent-warning-border);
+            box-shadow: 0 8px 30px var(--accent-warning-glow);
         }
+        
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.6);
+            background: var(--scrollbar-track);
             border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(100, 116, 139, 0.4);
+            background: var(--scrollbar-thumb);
             border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: rgba(148, 163, 184, 0.6);
+            background: var(--scrollbar-thumb-hover);
         }
+        
         .scale-svg-shadow {
-            filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.6));
+            filter: var(--scale-svg-shadow);
         }
+        
         .bolt-anim {
             animation: boltPulse 1.2s ease-in-out infinite;
         }
         @keyframes boltPulse {
             0%, 100% {
                 opacity: 1;
-                text-shadow: 0 0 0 rgba(251, 191, 36, 0);
+                text-shadow: 0 0 0 var(--bolt-glow-color);
             }
             50% {
                 opacity: 0.45;
-                text-shadow: 0 0 14px rgba(251, 191, 36, 0.95);
+                text-shadow: 0 0 14px var(--bolt-glow-color);
+            }
+        }
+        
+        /* Theme Toggle Styles */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.375rem;
+            background: var(--surface-glass);
+            border: 1px solid var(--border-primary);
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 200ms ease;
+        }
+        .theme-toggle:hover {
+            background: var(--surface-elevated);
+            border-color: var(--border-secondary);
+        }
+        .theme-toggle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 200ms ease;
+        }
+        .theme-toggle-btn:hover {
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+        .theme-toggle-btn.active {
+            color: var(--text-on-accent);
+            background: var(--accent-neutral);
+        }
+        [data-theme="light"] .theme-toggle-btn.active {
+            background: var(--accent-neutral);
+        }
+        [data-theme="dark"] .theme-toggle-btn.active {
+            background: var(--accent-neutral);
+        }
+        
+        /* Theme-specific adjustments for components */
+        [data-theme="light"] .glass-panel {
+            background: var(--glass-panel-bg);
+            border: 1px solid var(--glass-panel-border);
+        }
+        
+        [data-theme="light"] .glass-symptom {
+            background: var(--accent-negative-bg);
+            border: 1px solid var(--accent-negative-border);
+            box-shadow: var(--shadow-md);
+        }
+        [data-theme="light"] .glass-symptom:hover {
+            border-color: var(--accent-negative-border-hover);
+            box-shadow: 0 6px 24px var(--accent-negative-glow);
+        }
+        
+        [data-theme="light"] .glass-solution {
+            background: var(--accent-positive-bg);
+            border: 1px solid var(--accent-positive-border);
+            box-shadow: var(--shadow-md);
+        }
+        [data-theme="light"] .glass-solution:hover {
+            border-color: var(--accent-positive-border-hover);
+            box-shadow: 0 6px 24px var(--accent-positive-glow);
+        }
+        
+        [data-theme="light"] .glass-stress {
+            background: var(--accent-warning-bg);
+            border: 1px solid var(--accent-warning-border);
+            box-shadow: 0 8px 24px var(--accent-warning-glow);
+        }
+        
+        [data-theme="light"] .glass-panel,
+        [data-theme="light"] .glass-symptom,
+        [data-theme="light"] .glass-solution,
+        [data-theme="light"] .glass-stress {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        
+        /* Header adjustments for light mode */
+        [data-theme="light"] header {
+            background: var(--header-bg);
+            border-color: var(--header-border);
+        }
+        
+        [data-theme="light"] .filter-section {
+            background: var(--filter-bg);
+            border-color: var(--filter-border);
+        }
+        
+        [data-theme="light"] input[type="text"] {
+            background: var(--input-bg);
+            border-color: var(--input-border);
+            color: var(--text-primary);
+        }
+        [data-theme="light"] input[type="text"]:focus {
+            border-color: var(--input-focus-border);
+        }
+        [data-theme="light"] input[type="text"]::placeholder {
+            color: var(--text-muted);
+        }
+        
+        [data-theme="light"] .filter-btn {
+            background: var(--bg-secondary);
+            border-color: var(--border-primary);
+            color: var(--text-secondary);
+        }
+        [data-theme="light"] .filter-btn:hover {
+            border-color: var(--border-secondary);
+            color: var(--text-primary);
+        }
+        [data-theme="light"] .filter-btn.active {
+            background: var(--accent-negative-bg);
+            border-color: var(--accent-negative-border);
+            color: var(--accent-negative-text-strong);
+        }
+        
+        /* Scrollbar for light mode */
+        [data-theme="light"] .custom-scrollbar::-webkit-scrollbar-track {
+            background: var(--scrollbar-track);
+        }
+        [data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+        }
+        [data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: var(--scrollbar-thumb-hover);
+        }
+        
+        /* Scale SVG shadow for light mode */
+        [data-theme="light"] .scale-svg-shadow {
+            filter: var(--scale-svg-shadow);
+        }
+        
+        [data-theme="light"] .bolt-anim {
+            --bolt-glow-color: var(--bolt-glow-color);
+        }
+        
+        /* Selection colors */
+        [data-theme="light"] ::selection {
+            background: var(--accent-negative);
+            color: var(--text-on-accent);
+        }
+        
+        [data-theme="dark"] ::selection {
+            background: var(--accent-negative);
+            color: var(--text-on-accent);
+        }
+        
+        /* Transition for theme switch - exclude layout properties */
+        * {
+            transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, box-shadow 200ms ease, fill 200ms ease, stroke 200ms ease, opacity 200ms ease;
+        }
+        
+        /* Disable transitions during theme switch for specific elements to prevent flicker */
+        .theme-transitioning * {
+            transition: none !important;
+        }
+        
+        .bolt-anim {
+            animation: boltPulse 1.2s ease-in-out infinite;
+        }
+        @keyframes boltPulse {
+            0%, 100% {
+                opacity: 1;
+                text-shadow: 0 0 0 var(--bolt-glow-color);
+            }
+            50% {
+                opacity: 0.45;
+                text-shadow: 0 0 14px var(--bolt-glow-color);
             }
         }
     </style>
@@ -140,6 +490,20 @@
                 <button id="btn-catalog-view" onclick="switchView('catalog')" class="px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5">
                     <span>📚</span> Volltext-Katalog
                 </button>
+            </div>
+
+            <!-- Theme Toggle -->
+            <div class="flex items-center gap-2">
+                <div class="theme-toggle" id="theme-toggle" role="group" aria-label="Design-Modus wechseln">
+                    <button type="button" class="theme-toggle-btn" id="theme-dark-btn" data-theme="dark" aria-label="Dark Mode">
+                        <span aria-hidden="true">☾</span>
+                        <span class="sr-only">Dark Mode</span>
+                    </button>
+                    <button type="button" class="theme-toggle-btn" id="theme-light-btn" data-theme="light" aria-label="Light Mode">
+                        <span aria-hidden="true">☀</span>
+                        <span class="sr-only">Light Mode</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -1105,6 +1469,81 @@
                     stressCardDesc.innerHTML = "Exogene Primärfaktoren, die sich <strong>übergeordnet auf dem linken Waagbalken</strong> anhäufen und das gesamte System nach unten drücken:";
                 }
             }
+        }
+        }
+
+        // ==========================================================================
+        // THEME SYSTEM - Light/Dark Mode Toggle
+        // ==========================================================================
+        function initTheme() {
+            const html = document.documentElement;
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeDarkBtn = document.getElementById('theme-dark-btn');
+            const themeLightBtn = document.getElementById('theme-light-btn');
+            
+            // Get saved theme from localStorage or system preference
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+            
+            // Apply initial theme
+            html.setAttribute('data-theme', initialTheme);
+            updateThemeButtons(initialTheme);
+            
+            // Theme toggle click handler
+            function setTheme(theme) {
+                // Add transitioning class to prevent flicker
+                document.documentElement.classList.add('theme-transitioning');
+                
+                html.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                updateThemeButtons(theme);
+                
+                // Remove transitioning class after transition
+                setTimeout(() => {
+                    document.documentElement.classList.remove('theme-transitioning');
+                }, 250);
+            }
+            
+            function updateThemeButtons(theme) {
+                if (themeDarkBtn && themeLightBtn) {
+                    if (theme === 'dark') {
+                        themeDarkBtn.classList.add('active');
+                        themeLightBtn.classList.remove('active');
+                        themeDarkBtn.setAttribute('aria-pressed', 'true');
+                        themeLightBtn.setAttribute('aria-pressed', 'false');
+                    } else {
+                        themeLightBtn.classList.add('active');
+                        themeDarkBtn.classList.remove('active');
+                        themeLightBtn.setAttribute('aria-pressed', 'true');
+                        themeDarkBtn.setAttribute('aria-pressed', 'false');
+                    }
+                }
+            }
+            
+            // Event listeners
+            if (themeDarkBtn) {
+                themeDarkBtn.addEventListener('click', () => setTheme('dark'));
+            }
+            if (themeLightBtn) {
+                themeLightBtn.addEventListener('click', () => setTheme('light'));
+            }
+            
+            // Listen for system preference changes (only if user hasn't set a preference)
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                if (!localStorage.getItem('theme')) {
+                    const newTheme = e.matches ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    updateThemeButtons(newTheme);
+                }
+            });
+        }
+        
+        // Initialize theme when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initTheme);
+        } else {
+            initTheme();
         }
     </script>
 </body>
