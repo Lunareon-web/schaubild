@@ -35,87 +35,88 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', 'sans-serif']
+                        sans: ['Source Sans 3', 'system-ui', '-apple-system', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', 'sans-serif'],
+                        serif: ['Source Serif 4', 'Georgia', 'serif']
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,350;8..60,450;8..60,600&display=swap" rel="stylesheet">
     <style>
         /* ==========================================================================
            THEME SYSTEM - CSS Custom Properties
            ========================================================================== */
         :root {
             /* Dark Mode (Default/Referenz) */
-            --bg-primary: #080c14;
-            --bg-secondary: #0f172a;
-            --bg-tertiary: #1e293b;
-            --surface: rgba(15, 23, 42, 0.75);
-            --surface-elevated: rgba(15, 23, 42, 0.9);
-            --surface-glass: rgba(15, 23, 42, 0.75);
+            --bg-primary: #f8f2f0;
+            --bg-secondary: #fffaf6;
+            --bg-tertiary: #eef6f1;
+            --surface: rgba(255, 250, 246, 0.78);
+            --surface-elevated: rgba(255, 252, 248, 0.92);
+            --surface-glass: rgba(255, 250, 246, 0.72);
             
-            --border-primary: rgba(255, 255, 255, 0.08);
-            --border-secondary: rgba(255, 255, 255, 0.12);
-            --border-accent: rgba(244, 63, 94, 0.22);
-            --border-accent-hover: rgba(244, 63, 94, 0.45);
+            --border-primary: rgba(91, 85, 78, 0.14);
+            --border-secondary: rgba(91, 85, 78, 0.22);
+            --border-accent: rgba(190, 104, 121, 0.28);
+            --border-accent-hover: rgba(190, 104, 121, 0.48);
             
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-tertiary: #94a3b8;
-            --text-muted: #64748b;
-            --text-on-accent: #ffffff;
+            --text-primary: #302c2b;
+            --text-secondary: #5f5a56;
+            --text-tertiary: #7d7771;
+            --text-muted: #98908a;
+            --text-on-accent: #fffaf7;
             
-            --accent-negative: #f43f5e;
-            --accent-negative-hover: #fb7185;
-            --accent-negative-bg: rgba(244, 63, 94, 0.07);
-            --accent-negative-border: rgba(244, 63, 94, 0.22);
-            --accent-negative-border-hover: rgba(244, 63, 94, 0.45);
-            --accent-negative-glow: rgba(244, 63, 94, 0.15);
-            --accent-negative-text: #fda4af;
-            --accent-negative-text-strong: #f43f5e;
+            --accent-negative: #c56a82;
+            --accent-negative-hover: #d67d92;
+            --accent-negative-bg: rgba(248, 204, 210, 0.48);
+            --accent-negative-border: rgba(197, 106, 130, 0.28);
+            --accent-negative-border-hover: rgba(197, 106, 130, 0.48);
+            --accent-negative-glow: rgba(197, 106, 130, 0.18);
+            --accent-negative-text: #a94e68;
+            --accent-negative-text-strong: #963e59;
             
-            --accent-positive: #10b981;
-            --accent-positive-hover: #34d399;
-            --accent-positive-bg: rgba(16, 185, 129, 0.07);
-            --accent-positive-border: rgba(16, 185, 129, 0.22);
-            --accent-positive-border-hover: rgba(16, 185, 129, 0.45);
-            --accent-positive-glow: rgba(16, 185, 129, 0.15);
-            --accent-positive-text: #6ee7b7;
-            --accent-positive-text-strong: #10b981;
+            --accent-positive: #62a990;
+            --accent-positive-hover: #75bca2;
+            --accent-positive-bg: rgba(204, 233, 218, 0.52);
+            --accent-positive-border: rgba(98, 169, 144, 0.3);
+            --accent-positive-border-hover: rgba(98, 169, 144, 0.52);
+            --accent-positive-glow: rgba(98, 169, 144, 0.18);
+            --accent-positive-text: #4c917b;
+            --accent-positive-text-strong: #337864;
             
-            --accent-warning: #f97316;
-            --accent-warning-bg: rgba(249, 115, 22, 0.12);
-            --accent-warning-border: rgba(249, 115, 22, 0.35);
-            --accent-warning-glow: rgba(249, 115, 22, 0.15);
-            --accent-warning-text: #fed7aa;
+            --accent-warning: #d9a056;
+            --accent-warning-bg: rgba(249, 224, 184, 0.58);
+            --accent-warning-border: rgba(217, 160, 86, 0.34);
+            --accent-warning-glow: rgba(217, 160, 86, 0.18);
+            --accent-warning-text: #a86d2c;
             
             --accent-neutral: #64748b;
             --accent-neutral-bg: rgba(100, 116, 139, 0.1);
             
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.3);
-            --shadow-glass: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-sm: 0 1px 2px rgba(64, 50, 42, 0.08);
+            --shadow-md: 0 12px 32px rgba(64, 50, 42, 0.12);
+            --shadow-lg: 0 24px 70px rgba(64, 50, 42, 0.14);
+            --shadow-glass: 0 16px 45px rgba(64, 50, 42, 0.1);
             
-            --bg-gradient-start: #080c14;
-            --bg-gradient-end: #0f172a;
+            --bg-gradient-start: #faf1ed;
+            --bg-gradient-end: #eaf5ef;
             
             --scale-svg-shadow: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.6));
             --bolt-glow: rgba(251, 191, 36, 0.95);
             
-            --input-bg: rgba(15, 23, 42, 0.9);
-            --input-border: rgba(255, 255, 255, 0.12);
-            --input-focus-border: #f43f5e;
+            --input-bg: rgba(255, 252, 248, 0.92);
+            --input-border: rgba(91, 85, 78, 0.16);
+            --input-focus-border: #c56a82;
             
-            --header-bg: rgba(15, 23, 42, 0.9);
-            --header-border: rgba(148, 163, 184, 0.15);
+            --header-bg: rgba(255, 250, 246, 0.82);
+            --header-border: rgba(91, 85, 78, 0.14);
             
-            --filter-bg: rgba(15, 23, 42, 0.9);
-            --filter-border: rgba(255, 255, 255, 0.12);
+            --filter-bg: rgba(255, 250, 246, 0.82);
+            --filter-border: rgba(91, 85, 78, 0.14);
             
-            --glass-panel-bg: rgba(15, 23, 42, 0.75);
-            --glass-panel-border: rgba(255, 255, 255, 0.08);
+            --glass-panel-bg: rgba(255, 250, 246, 0.74);
+            --glass-panel-border: rgba(91, 85, 78, 0.14);
             
             --scrollbar-track: rgba(15, 23, 42, 0.6);
             --scrollbar-thumb: rgba(100, 116, 139, 0.4);
@@ -208,11 +209,26 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 400;
+            color: #1a2036;
+            background:
+                radial-gradient(32rem 22rem at 8% 6%, rgba(248,204,210,0.55), transparent 60%),
+                radial-gradient(28rem 26rem at 92% 10%, rgba(214,238,231,0.60), transparent 60%),
+                radial-gradient(36rem 24rem at 50% 100%, rgba(232,224,243,0.45), transparent 60%),
+                linear-gradient(180deg, #fdf8f6 0%, #f6f0ec 35%, #edf5f1 100%);
+            min-height:100vh;
             overflow-x: hidden;
+            -webkit-font-smoothing:antialiased;
         }
+        /* ===== PASTEL MORPHING BACKGROUND aus VERSION C ===== */
+        .bg-blobs{position:fixed; inset:0; pointer-events:none; z-index:-2; overflow:hidden}
+        .blob{position:absolute; border-radius:45% 55% 62% 38% / 48% 42% 58% 52%; filter:blur(0.5px); opacity:0.95}
+        .blob--1{width:42rem;height:30rem; left:-10rem; top:2rem; background:linear-gradient(135deg, rgba(252,228,233,0.9), rgba(253,233,208,0.55)); animation:morph 18s ease-in-out infinite alternate}
+        .blob--2{width:38rem;height:34rem; right:-12rem; top:12rem; background:linear-gradient(135deg, rgba(221,232,245,0.85), rgba(214,238,231,0.70)); animation:morph 22s ease-in-out infinite alternate -6s}
+        .blob--3{width:52rem;height:18rem; left:20%; bottom:-6rem; background:linear-gradient(90deg, rgba(232,224,243,0.35), rgba(214,238,231,0.35)); border-radius:50% / 50%; animation:morph2 26s ease infinite alternate}
+        @keyframes morph{0%{border-radius:45% 55% 62% 38% / 48% 42% 58% 52%; transform:rotate(0) translate(0,0)}100%{border-radius:63% 37% 42% 58% / 39% 57% 43% 61%; transform:rotate(6deg) translate(14px,-10px)}}
+        @keyframes morph2{0%{transform:translateX(-10px)}100%{transform:translateX(10px)}}
         
         .glass-panel {
             background: var(--glass-panel-bg);
@@ -249,13 +265,14 @@
         
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
+            height: 5px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: var(--scrollbar-track);
+            background: rgba(255, 252, 248, 0.28);
             border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: var(--scrollbar-thumb);
+            background: rgba(125, 119, 113, 0.22);
             border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
@@ -280,6 +297,17 @@
             }
         }
         
+        /* Explorer: Innen-Karten hell wie Home — fix dunkles bg-slate-900 */
+        #catalog-content .bg-slate-900\/80,
+        #catalog-content .bg-slate-900\/90,
+        #catalog-content [class*="bg-slate-900"]{
+            background: rgba(255,252,248,0.92) !important;
+            border-color: rgba(91,85,78,0.12) !important;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.68), 0 2px 10px rgba(64,50,42,0.04) !important;
+        }
+        #catalog-content .text-slate-300{ color: #5f5a56 !important; }
+        #catalog-content .text-slate-200{ color: #302c2b !important; }
+
         /* Theme Toggle Styles */
         .theme-toggle {
             display: flex;
@@ -459,37 +487,328 @@
                 text-shadow: 0 0 14px var(--bolt-glow-color);
             }
         }
+
+        .human-shell {
+            min-height: 100vh;
+            position: relative;
+            isolation: isolate;
+        }
+
+        .human-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            overflow: hidden;
+            display:none;
+        }
+
+        .human-bg::before,
+        .human-bg::after {
+            content: "";
+            position: absolute;
+            border-radius: 45% 55% 62% 38% / 48% 42% 58% 52%;
+            filter: blur(1px);
+            opacity: 0.72;
+            animation: morphBlob 18s ease-in-out infinite alternate;
+        }
+
+        .human-bg::before {
+            width: 42rem;
+            height: 30rem;
+            left: -13rem;
+            top: 5rem;
+            background: linear-gradient(135deg, rgba(252,228,233,0.9), rgba(253,233,208,0.55));
+        }
+
+        .human-bg::after {
+            width: 38rem;
+            height: 34rem;
+            right: -12rem;
+            top: 16rem;
+            background: linear-gradient(135deg, rgba(221,232,245,0.85), rgba(214,238,231,0.70));
+            animation-delay: -6s;
+        }
+
+        .synapse-field {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.38;
+            background-image:
+                radial-gradient(circle, rgba(43,45,138,0.18) 0 1.6px, transparent 2.2px),
+                radial-gradient(circle, rgba(58,166,138,0.14) 0 1.6px, transparent 2.2px);
+            background-size: 22rem 22rem, 26rem 26rem;
+            background-position: 0 0, 8rem 6rem;
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+
+        @keyframes morphBlob {
+            0% {
+                border-radius: 45% 55% 62% 38% / 48% 42% 58% 52%;
+                transform: translate3d(0, 0, 0) rotate(0deg);
+            }
+            100% {
+                border-radius: 63% 37% 42% 58% / 39% 57% 43% 61%;
+                transform: translate3d(1.4rem, -0.8rem, 0) rotate(8deg);
+            }
+        }
+
+        header {
+            background: var(--header-bg) !important;
+            border-color: var(--header-border) !important;
+            box-shadow: 0 18px 45px rgba(64, 50, 42, 0.08);
+        }
+
+        h1, h2, .human-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-weight: 350;
+            letter-spacing: 0;
+        }
+
+        .human-title {
+            background: linear-gradient(90deg, #302c2b 0%, #8b5866 46%, #4f806f 100%) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.08;
+        }
+
+        h3, h4, strong {
+            letter-spacing: 0;
+        }
+
+        .human-eyebrow {
+            color: #8d6047 !important;
+            background: rgba(249, 224, 184, 0.68) !important;
+            border-color: rgba(217, 160, 86, 0.28) !important;
+            border-radius: 999px !important;
+            text-transform: none !important;
+            letter-spacing: 0 !important;
+        }
+
+        .view-switcher,
+        .state-switcher {
+            background: rgba(255, 252, 248, 0.68) !important;
+            border: 1px solid rgba(91, 85, 78, 0.14) !important;
+            border-radius: 999px !important;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.72), 0 12px 30px rgba(64, 50, 42, 0.08) !important;
+        }
+
+        .view-tab,
+        .state-tab,
+        .filter-btn {
+            border-radius: 999px !important;
+            font-weight: 700 !important;
+            letter-spacing: 0 !important;
+            min-height: 2.25rem;
+        }
+
+        .view-tab[aria-current="page"],
+        .state-tab.is-active {
+            background: #302c2b !important;
+            color: #fffaf7 !important;
+            box-shadow: 0 10px 24px rgba(48, 44, 43, 0.18) !important;
+        }
+
+        .glass-panel,
+        .glass-symptom,
+        .glass-solution,
+        .glass-stress {
+            border-radius: 28px !important;
+            backdrop-filter: blur(22px) saturate(1.15);
+            -webkit-backdrop-filter: blur(22px) saturate(1.15);
+        }
+
+        .glass-panel {
+            box-shadow: var(--shadow-glass), inset 0 1px 0 rgba(255,255,255,0.62);
+        }
+
+        .glass-symptom,
+        .glass-solution,
+        .glass-stress,
+        .card-item {
+            transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease, opacity 200ms ease;
+        }
+
+        .card-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .glass-symptom {
+            background: linear-gradient(145deg, rgba(255, 246, 246, 0.74), var(--accent-negative-bg));
+        }
+
+        .glass-solution {
+            background: linear-gradient(145deg, rgba(248, 255, 251, 0.74), var(--accent-positive-bg));
+        }
+
+        .glass-stress {
+            background: linear-gradient(145deg, rgba(255, 250, 239, 0.78), var(--accent-warning-bg));
+        }
+
+        .glass-symptom .bg-slate-900\/80,
+        .glass-solution .bg-slate-900\/80,
+        .glass-stress .bg-slate-900\/80,
+        #catalog-content > div {
+            background: rgba(255, 252, 248, 0.68) !important;
+            border-color: rgba(91, 85, 78, 0.12) !important;
+            border-radius: 18px !important;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+        }
+
+        #scale-view > .glass-panel::before {
+            content: "";
+            position: absolute;
+            inset: 1rem;
+            pointer-events: none;
+            border-radius: 34px;
+            background:
+                radial-gradient(circle at 24% 32%, rgba(197, 106, 130, 0.14), transparent 13rem),
+                radial-gradient(circle at 70% 52%, rgba(98, 169, 144, 0.16), transparent 14rem);
+        }
+
+        #scale-view svg {
+            overflow: visible;
+        }
+
+        #scale-view svg path,
+        #scale-view svg line,
+        #scale-view svg circle {
+            vector-effect: non-scaling-stroke;
+        }
+
+        input[type="text"] {
+            background: var(--input-bg) !important;
+            border-color: var(--input-border) !important;
+            color: var(--text-primary) !important;
+            border-radius: 999px !important;
+            min-height: 2.7rem;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--input-focus-border) !important;
+            box-shadow: 0 0 0 4px rgba(197, 106, 130, 0.12);
+        }
+
+        .text-slate-100,
+        .text-slate-200,
+        .text-white {
+            color: var(--text-primary) !important;
+        }
+
+        .text-slate-300 {
+            color: var(--text-secondary) !important;
+        }
+
+        .text-slate-400,
+        .text-slate-500 {
+            color: var(--text-tertiary) !important;
+        }
+
+        .text-rose-300,
+        .text-rose-400 {
+            color: var(--accent-negative-text) !important;
+        }
+
+        .text-emerald-300,
+        .text-emerald-400 {
+            color: var(--accent-positive-text) !important;
+        }
+
+        .text-amber-300,
+        .text-amber-400 {
+            color: var(--accent-warning-text) !important;
+        }
+
+        .bg-slate-950\/90,
+        .bg-slate-900\/90,
+        .bg-slate-900,
+        .bg-slate-800,
+        .bg-slate-700 {
+            background-color: rgba(255, 252, 248, 0.74) !important;
+        }
+
+        .border-slate-800,
+        .border-slate-800\/80,
+        .border-slate-700,
+        .border-slate-700\/80 {
+            border-color: rgba(91, 85, 78, 0.14) !important;
+        }
+
+        .filter-btn.active {
+            background: #302c2b !important;
+            color: #fffaf7 !important;
+            border-color: #302c2b !important;
+        }
+
+        .scale-svg-shadow {
+            filter: drop-shadow(0 18px 34px rgba(64, 50, 42, 0.18));
+        }
+
+        footer {
+            background: rgba(255, 250, 246, 0.72) !important;
+            border-color: rgba(91, 85, 78, 0.12) !important;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                position: static !important;
+            }
+
+            .view-switcher,
+            .state-switcher {
+                width: 100%;
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+
+            #scale-view > .glass-panel {
+                padding: 1rem !important;
+            }
+
+            .custom-scrollbar {
+                scrollbar-width: thin;
+                scrollbar-color: rgba(125, 119, 113, 0.22) transparent;
+            }
+        }
     </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-rose-500 selection:text-white">
+<body class="human-shell min-h-screen flex flex-col justify-between selection:bg-rose-500 selection:text-white">
+    <div class="bg-blobs" aria-hidden="true"><div class="blob blob--1"></div><div class="blob blob--2"></div><div class="blob blob--3"></div></div>
+    <div class="human-bg" aria-hidden="true"></div>
+    <div class="synapse-field" aria-hidden="true"></div>
 
     <!-- Header / Titelbereich -->
     <header class="w-full pt-6 pb-4 px-4 md:px-8 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
             <div class="text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/20 mb-1.5">
+                <div class="human-eyebrow inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/20 mb-1.5">
                     <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                    Funktionsmodell Hypothese
+                    Human-Centered Illustration Design
                 </div>
-                <h1 class="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-100 via-slate-200 to-slate-400">
-                    MODELL DER EXEKUTIVEN FUNKTION
+                <h1 class="human-title text-2xl md:text-3xl lg:text-4xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-100 via-slate-200 to-slate-400">
+                    Modell der exekutiven Funktion
                 </h1>
                 <p class="text-xs md:text-sm text-slate-400 font-medium">
-                    Waage im Ungleichgewicht: Stress, Neurodivergenz & Regulative Kompensation
+                    Organisches Schaubild zwischen Stress, Neurodivergenz und regulativer Kompensation
                 </p>
             </div>
 
             <!-- Ansichts-Buttons -->
-            <div class="flex items-center gap-2 bg-slate-900/90 p-1.5 rounded-xl border border-slate-800">
-                <button id="btn-scale-view" onclick="switchView('scale')" class="px-3.5 py-2 rounded-lg text-xs font-bold transition-all bg-slate-700 text-white shadow-md flex items-center gap-1.5">
-                    <span>⚖️</span> Waagen-Diagramm
+            <div class="view-switcher flex items-center gap-2 bg-slate-900/90 p-1.5 rounded-xl border border-slate-800">
+                <button id="btn-scale-view" onclick="switchView('scale')" aria-current="page" class="view-tab px-3.5 py-2 rounded-lg text-xs font-bold transition-all bg-slate-700 text-white shadow-md flex items-center gap-1.5">
+                    <span>◌</span> Home / Modell
                 </button>
-                <button id="btn-matrix-view" onclick="switchView('matrix')" class="px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5">
-                    <span>📊</span> Cluster-Matrix
+                <button id="btn-matrix-view" onclick="switchView('matrix')" class="view-tab px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5">
+                    <span>⌁</span> Cluster
                 </button>
-                <button id="btn-catalog-view" onclick="switchView('catalog')" class="px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5">
-                    <span>📚</span> Volltext-Katalog
+                <button id="btn-catalog-view" onclick="switchView('catalog')" class="view-tab px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5">
+                    <span>⌕</span> Explorer
                 </button>
             </div>
 
@@ -545,14 +864,14 @@
                 <div class="flex items-center gap-2">
                     <span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Systemzustand der Waage:</span>
                 </div>
-                <div class="flex items-center gap-2 bg-slate-950/90 p-1.5 rounded-2xl border border-slate-800 shadow-inner">
-                    <button id="state-stress-btn" onclick="setScaleState('stress')" class="px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-400 hover:text-rose-300 hover:bg-rose-950/30 border border-transparent">
+                <div class="state-switcher flex items-center gap-2 bg-slate-950/90 p-1.5 rounded-2xl border border-slate-800 shadow-inner">
+                    <button id="state-stress-btn" onclick="setScaleState('stress')" class="state-tab px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-400 hover:text-rose-300 hover:bg-rose-950/30 border border-transparent">
                         <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse shadow-[0_0_8px_rgba(244,63,94,0.8)]"></span>
-                        <span>⚡ Unter Stress / Traumata (Dysreguliert)</span>
+                        <span>Unter Stress / Traumata</span>
                     </button>
-                    <button id="state-balanced-btn" onclick="setScaleState('balanced')" class="px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-lg">
+                    <button id="state-balanced-btn" onclick="setScaleState('balanced')" class="state-tab is-active px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-lg">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
-                        <span>⚖️ Normalzustand Reguliert (Im Gleichgewicht)</span>
+                        <span>Reguliert / im Gleichgewicht</span>
                     </button>
                 </div>
             </div>
@@ -1196,12 +1515,16 @@
         </div>
     </main>
 
-    <!-- ANSICHT 3: VOLLTEXT-KATALOG -->
+    <!-- ANSICHT 3: VOLLTEXT-KATALOG — angeglichen an Home (Pastel Human) -->
     <main id="catalog-view" class="hidden max-w-7xl mx-auto px-4 md:px-8 py-6 flex-grow w-full">
-        <div class="glass-panel p-6 rounded-2xl space-y-6">
-            <h2 class="text-xl font-black text-slate-100 border-b border-slate-800 pb-3"> Vollständiger Begriffskatalog</h2>
+        <div class="glass-panel p-6 rounded-[28px] space-y-6" style="box-shadow:0 16px 45px rgba(64,50,42,0.10), inset 0 1px 0 rgba(255,255,255,0.62);">
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-[rgba(91,85,78,0.12)] pb-4">
+                <h2 class="text-xl md:text-2xl" style="font-family:'Source Serif 4', Georgia, serif; font-weight:350; letter-spacing:-0.01em; color:#1a2036;">Vollständiger Begriffskatalog</h2>
+                <span class="text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border" style="background:rgba(253,233,208,0.75); border-color:rgba(217,160,86,0.22); color:#8d6047;">Explorer · alle Begriffe</span>
+            </div>
+            <p class="text-[13px] leading-relaxed" style="color:#5f5a56;">Alle Karten aus <em style="font-style:normal; font-weight:700; color:#1a2036;">Home</em> — hier als durchsuchbarer Katalog. Filter und Suche oben wirken live auch hier.</p>
             <div id="catalog-content" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <!-- Dynamisch oder direkt ablesbar -->
+                <!-- Wird dynamisch aus .searchable-node befüllt — Pastel Human Cards -->
             </div>
         </div>
     </main>
@@ -1227,19 +1550,23 @@
             matrixView.classList.add('hidden');
             catalogView.classList.add('hidden');
 
-            btnScale.className = "px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5";
-            btnMatrix.className = "px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5";
-            btnCatalog.className = "px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5";
+            [btnScale, btnMatrix, btnCatalog].forEach(btn => btn.removeAttribute('aria-current'));
+            btnScale.className = "view-tab px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5";
+            btnMatrix.className = "view-tab px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5";
+            btnCatalog.className = "view-tab px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-1.5";
 
             if (view === 'scale') {
                 scaleView.classList.remove('hidden');
-                btnScale.className = "px-3.5 py-2 rounded-lg text-xs font-bold transition-all bg-slate-700 text-white shadow-md flex items-center gap-1.5";
+                btnScale.setAttribute('aria-current', 'page');
+                btnScale.className = "view-tab px-3.5 py-2 rounded-lg text-xs font-bold transition-all bg-slate-700 text-white shadow-md flex items-center gap-1.5";
             } else if (view === 'matrix') {
                 matrixView.classList.remove('hidden');
-                btnMatrix.className = "px-3.5 py-2 rounded-lg text-xs font-bold transition-all bg-slate-700 text-white shadow-md flex items-center gap-1.5";
+                btnMatrix.setAttribute('aria-current', 'page');
+                btnMatrix.className = "view-tab px-3.5 py-2 rounded-lg text-xs font-bold transition-all bg-slate-700 text-white shadow-md flex items-center gap-1.5";
             } else if (view === 'catalog') {
                 catalogView.classList.remove('hidden');
-                btnCatalog.className = "px-3.5 py-2 rounded-lg text-xs font-bold transition-all bg-slate-700 text-white shadow-md flex items-center gap-1.5";
+                btnCatalog.setAttribute('aria-current', 'page');
+                btnCatalog.className = "view-tab px-3.5 py-2 rounded-lg text-xs font-bold transition-all bg-slate-700 text-white shadow-md flex items-center gap-1.5";
                 generateCatalog();
             }
         }
@@ -1261,41 +1588,54 @@
         function filterContent() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             const cards = document.querySelectorAll('.card-item');
-
             cards.forEach(card => {
                 const category = card.getAttribute('data-category') || '';
                 const keywords = card.getAttribute('data-keywords') || '';
                 const text = card.textContent.toLowerCase();
-
                 const matchesQuery = (query === '' || text.includes(query) || keywords.includes(query));
                 const matchesFilter = (currentFilter === 'all' || category === currentFilter);
-
                 if (matchesQuery && matchesFilter) {
                     card.style.display = '';
                     card.style.opacity = '1';
                 } else {
-                    if (query !== '' || currentFilter !== 'all') {
-                        card.style.opacity = '0.15';
-                    } else {
-                        card.style.display = '';
-                        card.style.opacity = '1';
-                    }
+                    if (query !== '' || currentFilter !== 'all') { card.style.opacity = '0.15'; }
+                    else { card.style.display = ''; card.style.opacity = '1'; }
                 }
+            });
+            // Explorer-Katalog ebenfalls live filtern (gleiche Logik, pastel bleibt)
+            // Explorer-Katalog: nutzt data-category vom Original — visuell wie Home
+            const catalogCards = document.querySelectorAll('#catalog-content > div');
+            catalogCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                const cat = card.getAttribute('data-category') || '';
+                const matchesQuery = (query === '' || text.includes(query));
+                const matchesFilter = (currentFilter === 'all' || cat === currentFilter);
+                const show = matchesQuery && matchesFilter;
+                card.style.display = show ? '' : 'none';
+                card.style.opacity = show ? '1' : '1';
             });
         }
 
         function generateCatalog() {
             const container = document.getElementById('catalog-content');
-            if (container.children.length > 0) return; // already rendered
-
-            const searchableNodes = document.querySelectorAll('.searchable-node');
+            if (container.children.length > 0) return;
+            const nodes = document.querySelectorAll('.searchable-node');
             let html = '';
-
-            searchableNodes.forEach(node => {
-                html += `<div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">${node.innerHTML}</div>`;
+            nodes.forEach(node => {
+                const cat = node.getAttribute('data-category') || '';
+                const isSymptom = node.classList.contains('glass-symptom') || cat==='symptom';
+                const isSolution = node.classList.contains('glass-solution') || cat==='solution';
+                const isStress = node.classList.contains('glass-stress') || cat==='stress';
+                let cardClass = 'bg-white/90';
+                let borderClass = 'border-[rgba(91,85,78,0.10)]';
+                if (isSymptom) { cardClass = 'bg-gradient-to-br from-white to-[rgba(248,204,210,0.35)]'; borderClass = 'border-[rgba(197,106,130,0.20)]'; }
+                if (isSolution) { cardClass = 'bg-gradient-to-br from-white to-[rgba(204,233,218,0.40)]'; borderClass = 'border-[rgba(98,169,144,0.22)]'; }
+                if (isStress) { cardClass = 'bg-gradient-to-br from-white to-[rgba(249,224,184,0.45)]'; borderClass = 'border-[rgba(217,160,86,0.24)]'; }
+                html += `<div data-category="${cat}" class="p-4 rounded-[18px] border backdrop-blur-[12px] shadow-[0_8px_24px_rgba(64,50,42,0.07)] ${cardClass} ${borderClass}" style="font-family:'Source Sans 3', sans-serif;">${node.innerHTML}</div>`;
             });
-
             container.innerHTML = html;
+            // Nach dem Rendern: dunkle Textfarben aus Home beibehalten (Tailwind slate überschreiben)
+            container.querySelectorAll('.text-slate-100, .text-slate-200, .text-slate-300').forEach(el=>{ el.style.color=''; });
         }
 
         let currentScaleState = 'balanced';
@@ -1341,8 +1681,8 @@
                 if (solutionsColumn) solutionsColumn.style.opacity = '1';
 
                 // Button Active States
-                btnBalanced.className = "px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-lg";
-                btnStress.className = "px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-400 hover:text-rose-300 hover:bg-rose-950/30 border border-transparent";
+                btnBalanced.className = "state-tab is-active px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-lg";
+                btnStress.className = "state-tab px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-400 hover:text-rose-300 hover:bg-rose-950/30 border border-transparent";
 
                 // Beam horizontal (0 deg)
                 beamGroup.setAttribute('transform', 'rotate(0, 500, 240)');
@@ -1410,8 +1750,8 @@
                 if (solutionsColumn) solutionsColumn.style.opacity = '0.15';
 
                 // Button Active States
-                btnStress.className = "px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-lg";
-                btnBalanced.className = "px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-400 hover:text-emerald-300 hover:bg-emerald-950/30 border border-transparent";
+                btnStress.className = "state-tab is-active px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-lg";
+                btnBalanced.className = "state-tab px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-400 hover:text-emerald-300 hover:bg-emerald-950/30 border border-transparent";
 
                 // Beam rotated (-12 deg)
                 beamGroup.setAttribute('transform', 'rotate(-12, 500, 240)');
