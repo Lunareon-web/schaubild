@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logisches Psychologisches Modell der Exekutiven Funktion</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&family=Noto+Emoji&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -314,6 +315,35 @@
         }
         #catalog-content .text-slate-300{ color: #5f5a56 !important; }
         #catalog-content .text-slate-200{ color: #302c2b !important; }
+
+
+        /* Noto Emoji -> Material Symbols recolorable */
+        .material-symbols-outlined{
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 1.05em;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+            vertical-align: -0.12em;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Kategorie-Farben */
+        .glass-stress .material-symbols-outlined,
+        #stress-panel .material-symbols-outlined,
+        .filter-btn[data-filter="stress"] .material-symbols-outlined{ color: #D9A056 !important; }
+        .glass-symptom .material-symbols-outlined{ color: #C56A82 !important; }
+        .glass-solution .material-symbols-outlined{ color: #3AA68A !important; }
+        /* Header / neutral */
+        .human-eyebrow .material-symbols-outlined{ color: #D9A056 !important; }
+        .header .material-symbols-outlined{ vertical-align: -0.12em; }
 
         /* Theme Toggle Styles */
         .theme-toggle {
@@ -853,11 +883,11 @@
             <div class="flex items-center gap-2">
                 <div class="theme-toggle" id="theme-toggle" role="group" aria-label="Design-Modus wechseln">
                     <button type="button" class="theme-toggle-btn" id="theme-dark-btn" data-theme="dark" aria-label="Dark Mode">
-                        <span aria-hidden="true">☾</span>
+                        <span aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">dark_mode</span></span>
                         <span class="sr-only">Dark Mode</span>
                     </button>
                     <button type="button" class="theme-toggle-btn" id="theme-light-btn" data-theme="light" aria-label="Light Mode">
-                        <span aria-hidden="true">☀</span>
+                        <span aria-hidden="true"><span class="material-symbols-outlined" aria-hidden="true">light_mode</span></span>
                         <span class="sr-only">Light Mode</span>
                     </button>
                 </div>
@@ -880,9 +910,9 @@
             <div class="flex items-center gap-1.5 overflow-x-auto w-full pb-1 md:pb-0 text-[11px] custom-scrollbar">
                 <span class="text-slate-400 font-bold uppercase tracking-wider text-[10px] mr-1 shrink-0">Filter:</span>
                 <button onclick="setFilter('all', event)" class="filter-btn active px-2.5 py-1 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-medium shrink-0 hover:border-slate-500">Alle</button>
-                <button onclick="setFilter('stress', event)" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-amber-300 border border-amber-500/30 font-medium shrink-0 hover:border-amber-400">⚡ Stress & Traumata</button>
-                <button onclick="setFilter('symptom', event)" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-rose-300 border border-rose-500/30 font-medium shrink-0 hover:border-rose-400">🚨 Herausforderungen</button>
-                <button onclick="setFilter('solution', event)" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-emerald-300 border border-emerald-500/30 font-medium shrink-0 hover:border-emerald-400">💡 Strategien & Lösungen</button>
+                <button onclick="setFilter('stress', event)" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-amber-300 border border-amber-500/30 font-medium shrink-0 hover:border-amber-400"><span class="material-symbols-outlined" aria-hidden="true">bolt</span> Stress & Traumata</button>
+                <button onclick="setFilter('symptom', event)" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-rose-300 border border-rose-500/30 font-medium shrink-0 hover:border-rose-400"><span class="material-symbols-outlined" aria-hidden="true">emergency</span> Herausforderungen</button>
+                <button onclick="setFilter('solution', event)" class="filter-btn px-2.5 py-1 rounded-lg bg-slate-900 text-emerald-300 border border-emerald-500/30 font-medium shrink-0 hover:border-emerald-400"><span class="material-symbols-outlined" aria-hidden="true">lightbulb</span> Strategien & Lösungen</button>
             </div>
         </div>
     </section>
@@ -920,7 +950,7 @@
                     <div id="stress-card" class="glass-stress rounded-2xl p-5 relative overflow-hidden transition-all duration-500">
                         <div class="flex items-center justify-between border-b border-amber-500/30 pb-3 mb-3">
                             <div class="flex items-center gap-2.5">
-                                <div class="p-2.5 bg-amber-500/20 rounded-xl text-amber-400 font-bold text-xl border border-amber-500/30 bolt-anim">⚡</div>
+                                <div class="p-2.5 bg-amber-500/20 rounded-xl text-amber-400 font-bold text-xl border border-amber-500/30 bolt-anim"><span class="material-symbols-outlined" aria-hidden="true">bolt</span></div>
                                 <div>
                                     <h3 class="text-base md:text-lg font-black text-amber-300 tracking-wide">STRESS / TRAUMATA</h3>
                                     <p id="stress-card-sub" class="text-[11px] font-bold text-amber-400/80 uppercase tracking-wider">Übergeordnete Systemlast</p>
@@ -937,22 +967,22 @@
 
                         <div class="grid grid-cols-2 gap-2 text-xs">
                             <div class="bg-slate-900/80 p-2.5 rounded-xl border border-amber-500/20 text-slate-200 flex items-center gap-2 font-medium">
-                                <span class="text-amber-400">💔</span> Verlust / Tod
+                                <span class="text-amber-400"><span class="material-symbols-outlined" aria-hidden="true">heart_broken</span></span> Verlust / Tod
                             </div>
                             <div class="bg-slate-900/80 p-2.5 rounded-xl border border-amber-500/20 text-slate-200 flex items-center gap-2 font-medium">
-                                <span class="text-amber-400">🏥</span> Krankheit
+                                <span class="text-amber-400"><span class="material-symbols-outlined" aria-hidden="true">local_hospital</span></span> Krankheit
                             </div>
                             <div class="bg-slate-900/80 p-2.5 rounded-xl border border-amber-500/20 text-slate-200 flex items-center gap-2 font-medium">
-                                <span class="text-amber-400">💼</span> Job / Existenz
+                                <span class="text-amber-400"><span class="material-symbols-outlined" aria-hidden="true">work</span></span> Job / Existenz
                             </div>
                             <div class="bg-slate-900/80 p-2.5 rounded-xl border border-amber-500/20 text-slate-200 flex items-center gap-2 font-medium">
-                                <span class="text-amber-400">⚠️</span> Krisen
+                                <span class="text-amber-400"><span class="material-symbols-outlined" aria-hidden="true">warning</span></span> Krisen
                             </div>
                             <div class="bg-slate-900/80 p-2.5 rounded-xl border border-amber-500/20 text-slate-200 flex items-center gap-2 font-medium">
-                                <span class="text-amber-400">💍</span> Beziehungskonflikte
+                                <span class="text-amber-400"><span class="material-symbols-outlined" aria-hidden="true">diamond</span></span> Beziehungskonflikte
                             </div>
                             <div class="bg-slate-900/80 p-2.5 rounded-xl border border-amber-500/20 text-slate-200 flex items-center gap-2 font-medium">
-                                <span class="text-amber-400">📰</span> Negative Nachrichten
+                                <span class="text-amber-400"><span class="material-symbols-outlined" aria-hidden="true">newspaper</span></span> Negative Nachrichten
                             </div>
                         </div>
 
@@ -1059,7 +1089,7 @@
                 <!-- 3. Energie, Stimulation & Entscheidung -->
                 <div class="glass-symptom p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="symptom" data-keywords="boreout erschöpfung hypoarousal decisional avoidance entscheidung impuls konsum">
                     <div class="flex items-center gap-2 text-rose-300 font-bold text-sm border-b border-rose-500/20 pb-2">
-                        <span>⚡</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">bolt</span></span>
                         <h3>Energie, Motivation & Entscheidungsfindung</h3>
                     </div>
                     <div class="space-y-2 text-xs">
@@ -1089,7 +1119,7 @@
                 <!-- 2. Perfektionismus & Vermeidung -->
                 <div class="glass-symptom p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="symptom" data-keywords="perfektionismus overengineering vermeidungsstrategie scheinproduktivität hyperfokus prokrastination">
                     <div class="flex items-center gap-2 text-rose-300 font-bold text-sm border-b border-rose-500/20 pb-2">
-                        <span>🎯</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">target</span></span>
                         <h3>Perfektionismus & Vermeidung</h3>
                     </div>
                     <div class="space-y-2 text-xs">
@@ -1115,7 +1145,7 @@
                 <!-- 1. Zeitwahrnehmung & Schlaf -->
                 <div class="glass-symptom p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="symptom" data-keywords="zeitblindheit time blindness zirkadian schlafphasenverschiebung umgebungen">
                     <div class="flex items-center gap-2 text-rose-300 font-bold text-sm border-b border-rose-500/20 pb-2">
-                        <span>⏳</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">hourglass</span></span>
                         <h3>Zeitwahrnehmung & Zirkadianer Rhythmus</h3>
                     </div>
                     <div class="space-y-2 text-xs">
@@ -1137,7 +1167,7 @@
                 <!-- 4. Sensorik, Motorik & Bewegung -->
                 <div class="glass-symptom p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="symptom" data-keywords="feinmotorik auditiv taktil graphomotorik arbeitsgedächtnis musik bewegung reizreich">
                     <div class="flex items-center gap-2 text-rose-300 font-bold text-sm border-b border-rose-500/20 pb-2">
-                        <span>🎧</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">headphones</span></span>
                         <h3>Sensorik, Motorik & Kognitive Last</h3>
                     </div>
                     <div class="space-y-2 text-xs">
@@ -1163,7 +1193,7 @@
                 <!-- 5. Kognitive & Exekutive Basissymptome – Medienaspekte -->
                 <div class="glass-symptom p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="symptom" data-keywords="medien aufmerksamkeit fragmentierung kontextwechsel push benachrichtigung sozialer vergleich rejection sensitivity emotional ansteckung vermeidungsprokrastination hyperfokus binge konsum entscheidungserschöpfung digital overengineering scheinproduktivität">
                     <div class="flex items-center gap-2 text-rose-300 font-bold text-sm border-b border-rose-500/20 pb-2">
-                        <span>📱</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">smartphone</span></span>
                         <h3>Kognitive & Exekutive Basissymptome – Medienaspekte</h3>
                     </div>
                     <div class="space-y-2 text-xs">
@@ -1205,7 +1235,7 @@
                 <!-- Strategy Cluster Overview Module -->
                 <div class="glass-solution p-4 rounded-2xl border-emerald-500/40 bg-emerald-950/20">
                     <h3 class="text-xs font-black uppercase tracking-wider text-emerald-400 mb-2 flex items-center gap-1.5">
-                        <span>🧩</span> DIE 7 STRATEGIE-CLUSTER
+                        <span><span class="material-symbols-outlined" aria-hidden="true">extension</span></span> DIE 7 STRATEGIE-CLUSTER
                     </h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
                         <div class="bg-slate-900/90 p-2 rounded-lg border border-emerald-500/20 font-semibold text-slate-200">
@@ -1235,7 +1265,7 @@
                 <!-- 1. Grundversorgung -->
                 <div class="glass-solution p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="solution" data-keywords="neurophysiologie grundversorgung bewegung sensorische stimulation aerob anaerob reizreich schlaf erholung circadian ultradian ernährung neurotransmitter dopamin basissubstrate magnesium l-theanin ashwagandha achtsamkeit nervensystem atemtechnik meditation yoga grounding natur taktil">
                     <div class="flex items-center gap-2 text-emerald-300 font-bold text-sm border-b border-emerald-500/20 pb-2">
-                        <span>🧬</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">genetics</span></span>
                         <h3>1. Grundversorgung</h3>
                     </div>
                     <div class="space-y-3 text-xs">
@@ -1332,7 +1362,7 @@
                 <!-- 2. Strukturierung der Aufgabe -->
                 <div class="glass-solution p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="solution" data-keywords="chunking mikrostarthilfe 5 minuten handlungssequenz handlungsblockade initiierung">
                     <div class="flex items-center gap-2 text-emerald-300 font-bold text-sm border-b border-emerald-500/20 pb-2">
-                        <span>🧩</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">extension</span></span>
                         <h3>2. Strukturierung der Aufgabe</h3>
                     </div>
                     <div class="space-y-2 text-xs">
@@ -1354,7 +1384,7 @@
                 <!-- 3. Stimulierung des Belohnungssystems -->
                 <div class="glass-solution p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="solution" data-keywords="gamification dopamin novelty seeking neugier positive verstärkung">
                     <div class="flex items-center gap-2 text-emerald-300 font-bold text-sm border-b border-emerald-500/20 pb-2">
-                        <span>⭐</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">star</span></span>
                         <h3>3. Stimulierung des Belohnungssystems</h3>
                     </div>
                     <div class="space-y-2 text-xs">
@@ -1376,7 +1406,7 @@
                 <!-- 4. Externe Verankerung -->
                 <div class="glass-solution p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="solution" data-keywords="externe zeitverankerung visuelles gewohnheitstracking body doubling fokus anker">
                     <div class="flex items-center gap-2 text-emerald-300 font-bold text-sm border-b border-emerald-500/20 pb-2">
-                        <span>⏰</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">alarm</span></span>
                         <h3>4. Externe Verankerung</h3>
                     </div>
                     <div class="space-y-2 text-xs">
@@ -1398,7 +1428,7 @@
                 <!-- 5. Einstellungsänderung -->
                 <div class="glass-solution p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="solution" data-keywords="perfektionismus abbau accountability verbindlichkeit überwachungsangst intrinsisch">
                     <div class="flex items-center gap-2 text-emerald-300 font-bold text-sm border-b border-emerald-500/20 pb-2">
-                        <span>👥</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">group</span></span>
                         <h3>5. Einstellungsänderung</h3>
                     </div>
                     <div class="space-y-2 text-xs">
@@ -1420,7 +1450,7 @@
                 <!-- 6. Soziale Einbettung -->
                 <div class="glass-solution p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="solution" data-keywords="soziale einbettung rückhalt gemeinschaft verbindlichkeit">
                     <div class="flex items-center gap-2 text-emerald-300 font-bold text-sm border-b border-emerald-500/20 pb-2">
-                        <span>🤝</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">handshake</span></span>
                         <h3>6. Soziale Einbettung</h3>
                     </div>
                     <div class="space-y-2 text-xs">
@@ -1442,7 +1472,7 @@
                 <!-- 7. Medienkontrolle & Vermeidungsstrategien -->
                 <div class="glass-solution p-4 rounded-2xl space-y-3 searchable-node card-item" data-category="solution" data-keywords="medienkontrolle app-blocker zugangsbarrieren timer intentionsbasiert nutzung ersatzstimulation digital wellbeing">
                     <div class="flex items-center gap-2 text-emerald-300 font-bold text-sm border-b border-emerald-500/20 pb-2">
-                        <span>🛡️</span>
+                        <span><span class="material-symbols-outlined" aria-hidden="true">shield</span></span>
                         <h3>7. Medienkontrolle & Vermeidungsstrategien</h3>
                     </div>
 <div class="space-y-2 text-xs">
@@ -1475,7 +1505,7 @@
             <div class="space-y-4">
                 <div class="glass-stress p-5 rounded-2xl">
                     <h3 class="text-base font-black text-amber-300 flex items-center gap-2">
-                        <span>⚡</span> STRESS / TRAUMATA (Übergeordnete Belastung)
+                        <span><span class="material-symbols-outlined" aria-hidden="true">bolt</span></span> STRESS / TRAUMATA (Übergeordnete Belastung)
                     </h3>
                     <p class="text-xs text-slate-300 mt-2">
                         Systemische Primärfaktoren: Verlust, Krankheit, Jobprobleme, akute Krisen, Partnerschaftskonflikte.
@@ -1483,7 +1513,7 @@
                 </div>
 
                 <div class="glass-symptom p-5 rounded-2xl space-y-3">
-                    <h3 class="text-base font-black text-rose-400">🚨 SÄMTLICHE SYMPTOME & HERAUSFORDERUNGEN</h3>
+                    <h3 class="text-base font-black text-rose-400"><span class="material-symbols-outlined" aria-hidden="true">emergency</span> SÄMTLICHE SYMPTOME & HERAUSFORDERUNGEN</h3>
                     <ul class="space-y-2 text-xs text-slate-300 list-disc list-outside pl-5">
                         <li><strong>Zeitblindheit / Time Blindness:</strong> Störung der zeitlichen Wahrnehmung.</li>
                         <li><strong>Zeitblindheit in stimulierenden Umgebungen:</strong> Zeitverlust bei hoher Stimulation.</li>
@@ -1510,7 +1540,7 @@
 
             <div class="space-y-4">
                 <div class="glass-solution p-5 rounded-2xl space-y-3">
-                    <h3 class="text-base font-black text-emerald-400">💡 SÄMTLICHE STRATEGIEN & LÖSUNGEN</h3>
+                    <h3 class="text-base font-black text-emerald-400"><span class="material-symbols-outlined" aria-hidden="true">lightbulb</span> SÄMTLICHE STRATEGIEN & LÖSUNGEN</h3>
                     <ul class="space-y-2 text-xs text-slate-300 list-disc list-outside pl-5">
                         <li><strong>Aerob-anaerobe Bewegung:</strong> Dopaminhaushalt regulieren.</li>
                         <li><strong>Reizreiche Bewegung:</strong> Belohnungssystem nachhaltiger aktivieren.</li>
