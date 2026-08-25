@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Waage extrahiert aus VERSION B Pastel_Human/index.html:942 — standalone, editierbar in Figma/Illustrator/Inkscape -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" role="img" aria-labelledby="title desc">
+  <title id="title">Waage — Modell der Exekutiven Funktion</title>
+  <desc id="desc">Pastel Human MUSE Waage: Sockel, Säule, Plakette AUSGLEICH &amp; SELBSTREGULATION, Pivot, Zeiger, Waagbalken, Ketten, Schalen. IDs bleiben fuer JS-Steuerung (scale-beam-group, left-chain-*, right-chain-*, left-dish, right-dish, gauge-needle, pivot-glow).</desc>
+  <defs>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="50%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop id="glow-stop" offset="0%" stop-color="#10b981" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="482" y="240" width="36" height="175" rx="6" fill="url(#metalGrad)" stroke="#475569" stroke-width="2"/>
+
+  <!-- Basis-Plakette — 50pt nach oben (Sockel entfernt) -->
+  <rect x="360" y="425" width="280" height="32" rx="16" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+  <text id="scale-base-text" x="500" y="446" text-anchor="middle" fill="#cbd5e1" font-size="12" font-weight="800" letter-spacing="1.5" font-family="Source Sans 3, sans-serif">AUSGLEICH &amp; SELBSTREGULATION</text>
+
+  <!-- Central Pivot Point -->
+  <circle cx="500" cy="240" r="38" fill="#1e293b" stroke="#64748b" stroke-width="3"/>
+  <circle id="pivot-glow" cx="500" cy="240" r="30" fill="url(#centerGlow)"/>
+
+  <!-- Dysregulations- / Regulations-Zeiger -->
+  <path id="gauge-needle" d="M 500 240 L 500 195" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+  <circle id="gauge-center-dot" cx="500" cy="240" r="7" fill="#10b981"/>
+
+  <!-- NEIGUNG DES WAAGBALKENS (JS: rotate) -->
+  <g id="scale-beam-group" transform="rotate(0, 500, 240)">
+    <rect x="140" y="233" width="720" height="14" rx="7" fill="url(#beamGrad)" stroke="#475569" stroke-width="2"/>
+    <circle cx="160" cy="240" r="10" fill="#f43f5e" stroke="#fff" stroke-width="2"/>
+    <circle cx="840" cy="240" r="10" fill="#10b981" stroke="#fff" stroke-width="2"/>
+  </g>
+
+  <!-- Ketten Links -->
+  <line id="left-chain-1" x1="160" y1="240" x2="100" y2="340" stroke="#10b981" stroke-width="2" stroke-dasharray="4,3"/>
+  <line id="left-chain-2" x1="160" y1="240" x2="220" y2="340" stroke="#10b981" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <!-- Ketten Rechts -->
+  <line id="right-chain-1" x1="840" y1="240" x2="780" y2="340" stroke="#10b981" stroke-width="2" stroke-dasharray="4,3"/>
+  <line id="right-chain-2" x1="840" y1="240" x2="900" y2="340" stroke="#10b981" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <!-- Waagschale Links -->
+  <path id="left-dish" d="M 75 340 Q 160 385 245 340 Z" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="3"/>
+  <text id="left-dish-text" x="165" y="405" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="900" font-family="Source Sans 3, sans-serif">SYSTEM IN BALANCE</text>
+
+  <!-- Waagschale Rechts -->
+  <path id="right-dish" d="M 755 340 Q 840 385 925 340 Z" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="3"/>
+  <text id="right-dish-text" x="835" y="405" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="900" font-family="Source Sans 3, sans-serif">REGULIERT &amp; STABIL</text>
+</svg>
