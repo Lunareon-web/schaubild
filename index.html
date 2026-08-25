@@ -967,8 +967,8 @@
                         <circle cx="500" cy="240" r="38" fill="#1e293b" stroke="#64748b" stroke-width="3"/>
                         <circle id="pivot-glow" cx="500" cy="240" r="30" fill="url(#centerGlow)"/>
                         
-                        <!-- Dysregulations- / Regulations-Zeiger -->
-                        <path id="gauge-needle" d="M 500 240 L 500 195" stroke="#10b981" stroke-width="4" stroke-linecap="round" class="transition-all duration-700 ease-in-out"/>
+                        <!-- Dysregulations- / Regulations-Zeiger — Neigung wie Waage -->
+                        <path id="gauge-needle" d="M 500 240 L 500 195" stroke="#10b981" stroke-width="4" stroke-linecap="round" style="transition: transform 0.7s cubic-bezier(0.4,0,0.2,1), stroke 0.7s ease;" transform="rotate(0, 500, 240)"/>
                         <circle id="gauge-center-dot" cx="500" cy="240" r="7" fill="#10b981" class="transition-all duration-700 ease-in-out"/>
 
                         <!-- NEIGUNG DES WAAGBALKENS (Dynamisch via JS) -->
@@ -1731,8 +1731,9 @@
                 rightDishText.setAttribute('y', '405');
                 rightDishText.textContent = 'REGULIERT & STABIL';
 
-                // Gauge Needle upright
+                // Gauge Needle upright — gleicher Winkel wie Waage (0°)
                 gaugeNeedle.setAttribute('d', 'M 500 240 L 500 195');
+                gaugeNeedle.setAttribute('transform', 'rotate(0, 500, 240)');
                 gaugeNeedle.setAttribute('stroke', '#10b981');
                 gaugeCenterDot.setAttribute('fill', '#10b981');
                 if (glowStop) glowStop.setAttribute('stop-color', '#10b981');
@@ -1800,8 +1801,9 @@
                 rightDishText.setAttribute('y', '335');
                 rightDishText.textContent = 'KOMPENSATION';
 
-                // Gauge Needle left
-                gaugeNeedle.setAttribute('d', 'M 500 240 L 465 205');
+                // Gauge Needle left — gleicher Winkel wie Waage (-12°)
+                gaugeNeedle.setAttribute('d', 'M 500 240 L 500 195');
+                gaugeNeedle.setAttribute('transform', 'rotate(-12, 500, 240)');
                 gaugeNeedle.setAttribute('stroke', '#ef4444');
                 gaugeCenterDot.setAttribute('fill', '#ef4444');
                 if (glowStop) glowStop.setAttribute('stop-color', '#ef4444');
