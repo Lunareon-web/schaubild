@@ -836,7 +836,10 @@
                 width: 100%;
                 overflow-x: auto;
                 justify-content: flex-start;
+                gap: 4px !important;
+                padding: 4px !important;
             }
+            .view-tab{ font-size:11px !important; padding:6px 10px !important; white-space:nowrap !important; flex:0 0 auto !important; }
 
             #scale-view > .glass-panel {
                 padding: 1rem !important;
@@ -846,6 +849,32 @@
                 scrollbar-width: thin;
                 scrollbar-color: rgba(125, 119, 113, 0.22) transparent;
             }
+
+            /* === Mobile: nur Filter + Systemzustand-Toggle + STRESS-Header kompakt (Strategien/Symptome unberührt) === */
+            .controls{ gap:8px !important; }
+            .search-wrap{ min-width:0 !important; flex:1 1 100% !important; }
+            .search-wrap input{ height:38px !important; font-size:13px !important; padding-left:36px !important; }
+            .filters{ gap:6px !important; flex-wrap:nowrap !important; overflow-x:auto !important; padding-bottom:4px !important; -webkit-overflow-scrolling:touch; }
+            .filters b{ display:none !important; }
+            .fbtn, .filter-btn{ font-size:11px !important; padding:6px 10px !important; white-space:nowrap !important; flex:0 0 auto !important; }
+            .state-bar{ flex-direction:column !important; align-items:stretch !important; gap:10px !important; padding:8px 4px 12px !important; }
+            .state-bar h2{ font-size:11px !important; letter-spacing:0.06em !important; }
+            .state-switch{ width:100% !important; padding:3px !important; gap:2px !important; display:flex !important; }
+            .sbtn{ font-size:11px !important; padding:8px 6px !important; flex:1 1 0 !important; justify-content:center !important; line-height:1.25 !important; text-align:center !important; white-space:normal !important; word-break:break-word !important; min-height:auto !important; }
+            #stress-card{ padding:12px !important; }
+            #stress-card .stress-head{ flex-direction:column !important; align-items:flex-start !important; gap:6px !important; }
+            #stress-card .stress-head h3{ font-size:13px !important; }
+            #stress-card .grid{ gap:6px !important; }
+            #stress-card .bg-slate-900\/80{ padding:8px 8px !important; font-size:11px !important; gap:6px !important; line-height:1.3 !important; }
+            #stress-card .bg-slate-900\/80 .material-symbols-outlined{ font-size:14px !important; }
+            html{ zoom: 1 !important; }
+            body{ transform: none !important; width: auto !important; margin: 0 !important; }
+        }
+        @media (max-width: 380px){
+            #stress-card .grid{ grid-template-columns:1fr !important; }
+            .sbtn{ font-size:10px !important; padding:7px 4px !important; }
+            .fbtn, .filter-btn{ font-size:10px !important; padding:5px 8px !important; }
+            .state-bar h2{ font-size:10px !important; }
         }
     </style>
 <script defer src="/_vercel/insights/script.js"></script>
