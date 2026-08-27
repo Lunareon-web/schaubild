@@ -944,7 +944,7 @@
             <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <!-- SYSTEM ZUSTAND STRIP / SELECTOR -->
-            <div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-800/80">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-0 pb-4 border-b border-slate-800/80">
                 <div class="flex items-center gap-2">
                     <span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Systemzustand der Waage:</span>
                 </div>
@@ -960,7 +960,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
                 
                 <!-- STRESS / TRAUMATA BLOCK (LINKS - nur sichtbar bei Stress-Button) -->
                 <div id="stress-card-container" class="lg:col-span-5 card-item searchable-node transition-all duration-500 hidden" data-keywords="stress traumata verlust krankheit job krisen partnerschaft überlastung negative nachrichten" data-category="stress">
@@ -1010,8 +1010,8 @@
                     </div>
                 </div>
 
-                <!-- SVG Waage Visualisierung (RECHTS) -->
-                <div id="scale-svg-container" class="lg:col-span-12 flex flex-col items-center justify-center relative min-h-[320px] transition-all duration-500">
+                <!-- SVG Waage Visualisierung (RECHTS) — Abstand oben = unten -->
+                <div id="scale-svg-container" class="lg:col-span-12 flex flex-col items-center justify-center relative pt-6 transition-all duration-500">
                     
                     <svg class="w-full max-w-[620px] h-auto scale-svg-shadow" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid meet">
                         <defs>
@@ -1073,7 +1073,7 @@
                     </svg>
 
                     <!-- Status Indicator Badge -->
-                    <div id="scale-status-badge" class="mt-2 glass-panel px-4 py-2 rounded-xl border border-emerald-500/40 shadow-lg text-center transition-all duration-500">
+                    <div id="scale-status-badge" class="mt-6 glass-panel px-4 py-2 rounded-xl border border-emerald-500/40 shadow-lg text-center transition-all duration-500">
                         <span id="scale-status-text" class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-emerald-400">
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
                             NORMALZUSTAND: OPTIMAL REGULIERT & IM GLEICHGEWICHT
@@ -1089,16 +1089,11 @@
             
             <!-- LINKE SPALTE: HERAUSFORDERUNGEN & SYMPTOME -->
             <div class="space-y-4">
-                <div class="flex items-center justify-between border-b border-rose-500/30 pb-2">
-                    <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 border-b border-rose-500/30 pb-2">
                         <span class="w-3 h-3 rounded-full bg-rose-500"></span>
                         <h2 class="text-lg md:text-xl font-black text-rose-400 uppercase tracking-wider">
                             Herausforderungen & Symptome
                         </h2>
-                    </div>
-                    <span class="text-xs font-bold text-rose-400/80 bg-rose-500/10 px-2.5 py-1 rounded-full border border-rose-500/20">
-                        Linke Waagschale
-                    </span>
                 </div>
 
                 <!-- Symptom Cluster Cards -->
@@ -1237,16 +1232,11 @@
 
             <!-- RECHTE SPALTE: STRATEGIEN & LÖSUNGEN -->
             <div id="solutions-column" class="space-y-4 transition-all duration-500" style="opacity: 1;">
-                <div class="flex items-center justify-between border-b border-emerald-500/30 pb-2">
-                    <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 border-b border-emerald-500/30 pb-2">
                         <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
                         <h2 class="text-lg md:text-xl font-black text-emerald-400 uppercase tracking-wider">
                             Strategien & Regulative Lösungen
                         </h2>
-                    </div>
-                    <span class="text-xs font-bold text-emerald-400/80 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
-                        Rechte Waagschale
-                    </span>
                 </div>
 
                 <!-- Strategy Cluster Overview Module -->
